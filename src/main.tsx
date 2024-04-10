@@ -9,6 +9,7 @@ const Global = createGlobalStyle`
   }
 `;
 
+//test ist ein Kommentar
 const container = document.getElementById("root");
 const root = createRoot(container!);
 

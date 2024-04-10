@@ -26,7 +26,12 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - name: Vitest Coverage Report
+    - name: 'Test'
+      run: npx vitest --coverage.enabled true
+    - name: 'Report Coverage'
+      # Set if: always() to also generate the report if tests are failing
+      # Only works if you set `reportOnFailure: true` in your vite config as specified above
+      if: always() 
       uses: davelosert/vitest-coverage-report-action@v2.3.0
             
     - run: npm ci

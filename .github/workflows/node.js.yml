@@ -26,6 +26,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    - name: 'Install Deps'
+      run: npm install
     - name: 'Test'
       run: npx vitest --coverage.enabled true
     - name: 'Report Coverage'
